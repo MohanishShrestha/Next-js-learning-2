@@ -1,0 +1,68 @@
+# server client component
+- every component in a Next.js app defaults to being a server component
+- Running components on the server brings serveral advntages
+    * zero-bundle size
+    * direct access to server-side resources 
+    * improved security
+    * better SEO
+
+limitation
+- can't interact with browser APIs or handle user interactions
+ie can't use hooks
+
+# RSC rendering lifecycle
+- client, Nextjs and react
+- look on public file name as loading and update
+
+Server rendering strategies
+- Static rendering
+- Dynamic rendering
+- Streaming
+
+
+#Static rendering
+-It is a server rendering strategy where we generate html pages
+when building our application
+- think of it as preparing all your content in advance before any user visits your site
+- once build these pages can be cached by cdns and served instantly to users
+- with this approach the same pre-rendered page can be shared among different users giving your app a significant performance boost
+- static rendering perfect for things like blog posts e-commerce product listings documentation and marketing pages
+
+How to statically render?
+- static rendering is the default strategy in the app router
+- All routes are automatically prepared at build time without any additional setup
+
+
+difference between server and dev server
+- in production we create one optimized build and deploy it no on-the-fly changes after deployment
+- A development server on the other hand focuses on the developer experience
+ 
+Prefetching
+- it is a technique that preloads routes in the background as their links become visible
+- for static next js automatically prefetches and caches the whole router
+- when home page loads Nextjs is already prefetching routes for instant navigation
+
+# dynamically render
+- next automatically switches to dynamic rendering for an entire route when it 
+detects what we call a dynamic function or dynamic API
+
+dynamic function 
+- cookies()
+-headers()
+-connection()
+-draftMode()
+-searchParams prop
+-after()
+
+
+#generateStaticParams()
+generateStaticParams is a function that 
+- works alongside dynamic route segments
+- to generate static routes during build time
+- instead of on demand at request time
+- giving us a nice performance boost
+
+
+#Streaming
+-it is a strategy that allows for progressive UI rendering from the server
+- Work is broken down 
