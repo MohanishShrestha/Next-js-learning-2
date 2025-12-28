@@ -63,6 +63,30 @@ generateStaticParams is a function that
 - giving us a nice performance boost
 
 
+#dynamicParams
+default true
+
+
 #Streaming
 -it is a strategy that allows for progressive UI rendering from the server
-- Work is broken down 
+- Work is broken down into smaller chunks and streamed to the client as soon as they are ready
+- this means users can see parts of the page right away, without waiting for everything to load
+
+
+#server only code
+- we can import component to client and server but need some times to import only on server only
+so use npm i server-only
+
+#third party packages
+slider uses client side feature so it can't be use on server component
+we can define it at another ie on components page and import it 
+
+#Context Provider
+- live near the root of an application to share global state and logic
+- we cant use it on layout it works on client component
+- we can make layout client component but it will lead to make all the other component client
+- so create a context nd render it and use it by importing it
+
+#Client only code
+- use fo client component only
+- prevent unintended server side side usage of client side code 
