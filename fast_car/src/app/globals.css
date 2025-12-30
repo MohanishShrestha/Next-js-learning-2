@@ -47,12 +47,6 @@
 }
 
 :root {
-  --color-prime: #f97316; /* Orange */
-  --color-prime-hover: #ea580c; /* Burnt Orange */
-  --color-backgrounded: #ffffff; /* White */
-  --color-navbar: #111827; /* Charcoal Black */
-  --color-textss: #1f2937; /* Dark Gray */
-  --color-borderss: #e5e7eb; /* Light Gray */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

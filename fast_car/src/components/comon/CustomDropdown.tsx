@@ -39,6 +39,7 @@ export default function CustomDropdown({
             className="
               w-(--radix-navigation-menu-trigger-width)
               p-2
+              ${className}
             "
           >
             <ul className="flex flex-col gap-1">
