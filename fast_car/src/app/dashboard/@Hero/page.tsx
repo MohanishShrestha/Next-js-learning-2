@@ -9,9 +9,21 @@ const images = ["/car/car1.jpg", "/car/car2.jpg", "/car/car3.jpg"];
 const imagecar = ["/newCar.png", "/car/car2.jpg", "/car/car3.jpg"];
 
 const categories = [
-  { name: "Shop New", icon: "🚗", color: "bg-blue-50" },
-  { name: "Shop Used", icon: "🏎️", color: "bg-yellow-50" },
-  { name: "Electric", icon: "⚡", color: "bg-emerald-50" },
+  {
+    name: "Shop New",
+    image: "/newCar.png",
+    color: "bg-blue-50",
+  },
+  {
+    name: "Shop Used",
+    image: "/usedCar.png",
+    color: "bg-yellow-50",
+  },
+  {
+    name: "Electric",
+    image: "/electricCar.png",
+    color: "bg-emerald-50",
+  },
 ];
 
 export default function Hero() {
@@ -20,7 +32,7 @@ export default function Hero() {
   return (
     <>
       {/* HERO SECTION */}
-      <div className="relative w-full h-[85vh]">
+      <div className="relative w-full h-[94vh]">
         {/* Background Image */}
         <Image
           src={images[current]}
@@ -35,7 +47,7 @@ export default function Hero() {
 
         {/* Center Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-green-500 text-3xl md:text-5xl font-bold mb-4">
+          <h1 className="text-green-600 text-3xl md:text-5xl font-bold mb-4">
             Find Your Perfect Car
           </h1>
 
@@ -53,7 +65,8 @@ export default function Hero() {
             <input
               type="text"
               placeholder="Search by brand, model, or budget..."
-              className="w-full pl-12 pr-28 py-4 rounded-full text-green-600 bg-white/30 focus:bg-white/80 focus:outline-none"
+              className="w-full pl-12 pr-28 py-4 rounded-full text-green-600 bg-white/30 focus:bg-white/80 focus:outline-none placeholder:text-gray-700
+    placeholder:opacity-100"
             />
 
             <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full">
@@ -71,9 +84,17 @@ export default function Hero() {
               key={category.name}
               className={`cursor-pointer hover:shadow-lg transition ${category.color}`}
             >
-              <CardContent className="flex flex-col items-center justify-center py-8">
-                
-                <span className="text-4xl mb-3">{category.icon}</span>
+              <CardContent className=" w-full flex flex-col items-center justify-center py-8">
+                <div className="relative w-36 h-20">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 200px"
+                  />
+                </div>
+
                 <h3 className="text-lg font-semibold text-gray-800">
                   {category.name}
                 </h3>

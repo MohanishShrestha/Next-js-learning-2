@@ -4,23 +4,31 @@ import { Button } from "@/components/ui/button";
 import { User, Menu, X } from "lucide-react";
 import CustomDropdown from "./CustomDropdown";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <div className="bg-white shadow-md sticky top-0 z-50">
-      {/* Top Nav */}
       <div className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-12 py-2 border-b">
         {/* Logo */}
-        <Image
-          src="/Fast.JPG"
-          alt="FastCar"
-          width={140}
-          height={40}
-          className="object-contain"
-        />
+        <div className="relative h-10 w-36">
+          <Image
+            src="/Fast.JPG"
+            alt="FastCar"
+            width={140}
+            height={40}
+            className="h-auto w-auto object-contain"
+          />
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-6 text-sm font-medium text-gray-800">
@@ -34,17 +42,14 @@ export default function Navbar() {
               "Popular Brands",
             ]}
           />
-
           <CustomDropdown
             label="USED CARS"
             items={["Buy Used Car", "Used Electric cars", "Sell Used Car"]}
           />
-
           <CustomDropdown
             label="NEWS & REVIEWS"
             items={["Top News Of The Night", "User Review", "Tips & Advice"]}
           />
-
           <div className="flex items-center gap-1 text-lg bg-transparent hover:bg-gray-100 px-2 rounded focus:bg-transparent cursor-pointer">
             CONTACT
           </div>
@@ -52,12 +57,12 @@ export default function Navbar() {
 
         {/* Desktop Sign In */}
         <div className="hidden lg:block">
-          <Button className="flex items-center gap-1 bg-green-600 hover:bg-green-700">
+          <Button className="bg-green-600 hover:bg-green-700">
             <User size={18} /> Sign In
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button className="lg:hidden" onClick={() => setOpen(!open)}>
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -76,20 +81,19 @@ export default function Navbar() {
               "Popular Brands",
             ]}
           />
-
           <CustomDropdown
             label="USED CARS"
             items={["Buy Used Car", "Used Electric cars", "Sell Used Car"]}
           />
-
           <CustomDropdown
             label="NEWS & REVIEWS"
             items={["Top News Of The Night", "User Review", "Tips & Advice"]}
           />
+          <p className="flex items-center gap-1 text-xl bg-transparent hover:bg-gray-100 px-4 rounded focus:bg-transparent cursor-pointer">
+            CONTACT
+          </p>
 
-          <p>CONTACT</p>
-
-          <Button className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700">
+          <Button className="w-full bg-green-600 hover:bg-green-700">
             <User size={18} /> Sign In
           </Button>
         </div>
