@@ -3,11 +3,13 @@ export default function DashboardLayout({
   Hero,
   PopularCar,
   Offer,
+  Top,
 }: {
   children: React.ReactNode;
   Hero: React.ReactNode;
   PopularCar: React.ReactNode;
   Offer: React.ReactNode;
+  Top: React.ReactNode;
 }) {
   return (
     <>
@@ -15,6 +17,7 @@ export default function DashboardLayout({
         <div>{Hero}</div>
         <div>{PopularCar}</div>
         <div>{Offer}</div>
+        <div>{Top}</div>
     </>
   );
 }

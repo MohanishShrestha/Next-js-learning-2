@@ -21,27 +21,27 @@ const cars = [
 
 export default function SpecialOffers() {
   return (
-    <section className="py-16  max-w-6xl mx-auto">
+    <section className="py-16  max-w-6xl mx-auto ">
       {/* Top Card with Nested Car Cards */}
-      <Card className="bg-black/90 text-white relative overflow-hidden">
+      <Card className="bg-black/90 text-white relative overflow-hidden rounded-4xl shadow-lg">
         {/* Header */}
-        <CardHeader className="flex justify-between items-start p-6">
+        <CardHeader className="flex justify-between items-start p-8">
           <div className="text-2xl font-bold">
             Special
             <span className="text-yellow-500 px-2">Offer</span>
           </div>
           <div className="hidden lg:block">
-            <h2 className="text-2xl sm:text-4xl font-bold mb-2">
+            <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center">
               Drive Your Dream Car Today
             </h2>
-            <p className="text-gray-300 text-lg mb-6">
+            <p className="text-gray-300 text-sm mb-6">
               Limited-time deals on our most popular models. Don't miss out!
             </p>
           </div>
 
           <Button
             variant="outline"
-            className="text-white px-6 border-green-500  bg-green-500 hover:text-black"
+            className="text-white px-8 border-green-500  bg-green-500 hover:text-black "
           >
             View
           </Button>
@@ -68,7 +68,7 @@ export default function SpecialOffers() {
                 </div>
 
                 {/* Card Content */}
-                <CardContent className="relative z-10 h-full p-6 text-white">
+                <CardContent className="relative z-10 h-full p-6 text-gray-200">
                   <div
                     className="absolute flex flex-col items-center gap-2
                   top-[75%] left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -79,7 +79,7 @@ export default function SpecialOffers() {
                       {car.offer}
                     </p>
 
-                    <Button className="bg-green-500 px-8 py-5 text-black hover:bg-green-400 rounded-full">
+                    <Button className="bg-green-500 px-8 py-5 hover:bg-green-400 rounded-2xl text-white">
                       Check Offer
                     </Button>
                   </div>
