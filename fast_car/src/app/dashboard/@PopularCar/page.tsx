@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Car {
   id: number;
@@ -95,9 +96,11 @@ export default function PopularCars() {
 
                 {/* Shop Now Button */}
                 {isActive && (
-                  <Button className="w-full bg-white text-[#00965e] hover:bg-slate-100 rounded-full font-bold order-3 mt-2">
-                    Shop Now
-                  </Button>
+                  <Link href={`/dashboard/cars/${car.id}`} className="w-full order-3">
+                    <Button className="w-full bg-white text-green-600 hover:bg-gray-100 rounded-full font-bold order-3 mt-2">
+                      Shop Now
+                    </Button>
+                  </Link>
                 )}
               </div>
             </div>

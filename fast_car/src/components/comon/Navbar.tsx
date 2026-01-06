@@ -5,6 +5,7 @@ import { User, Menu, X } from "lucide-react";
 import CustomDropdown from "./CustomDropdown";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -21,13 +22,15 @@ export default function Navbar() {
       <div className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-12 py-2 border-b">
         {/* Logo */}
         <div className="relative h-10 w-36">
-          <Image
-            src="/Fast.JPG"
-            alt="FastCar"
-            width={140}
-            height={40}
-            className="h-auto w-auto object-contain"
-          />
+          <Link href="/dashboard" className="relative h-10 w-36">
+            <Image
+              src="/Fast.JPG"
+              alt="FastCar"
+              width={140}
+              height={40}
+              className="h-auto w-auto object-contain"
+            />
+          </Link>
         </div>
 
         {/* Desktop Menu */}
@@ -50,9 +53,12 @@ export default function Navbar() {
             label="NEWS & REVIEWS"
             items={["Top News Of The Night", "User Review", "Tips & Advice"]}
           />
-          <div className="flex items-center gap-1 text-lg bg-transparent hover:bg-gray-100 px-2 rounded focus:bg-transparent cursor-pointer">
+          <Link
+            href="/contact"
+            className="flex items-center gap-1 text-lg hover:bg-gray-100 px-2 rounded cursor-pointer"
+          >
             CONTACT
-          </div>
+          </Link>
         </div>
 
         {/* Desktop Sign In */}
@@ -89,9 +95,13 @@ export default function Navbar() {
             label="NEWS & REVIEWS"
             items={["Top News Of The Night", "User Review", "Tips & Advice"]}
           />
-          <p className="flex items-center gap-1 text-xl bg-transparent hover:bg-gray-100 px-4 rounded focus:bg-transparent cursor-pointer">
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-1 text-xl hover:bg-gray-100 px-4 rounded cursor-pointer"
+          >
             CONTACT
-          </p>
+          </Link>
 
           <Button className="w-full bg-green-600 hover:bg-green-700">
             <User size={18} /> Sign In

@@ -4,12 +4,16 @@ export default function DashboardLayout({
   PopularCar,
   Offer,
   Top,
+  Choose,
+  Carsole,
 }: {
   children: React.ReactNode;
   Hero: React.ReactNode;
   PopularCar: React.ReactNode;
   Offer: React.ReactNode;
   Top: React.ReactNode;
+  Choose: React.ReactNode;
+  Carsole: React.ReactNode;
 }) {
   return (
     <>
@@ -18,6 +22,8 @@ export default function DashboardLayout({
         <div>{PopularCar}</div>
         <div>{Offer}</div>
         <div>{Top}</div>
+        <div>{Choose}</div>
+        <div>{Carsole}</div>
     </>
   );
 }
